@@ -1,5 +1,12 @@
+
+
+const express = require('express');
+const http = require('http');
+const app = express();
 const axios = require('axios');
 const mqtt = require('mqtt');
+const server = http.createServer(app);
+
 
 // MQTT Configuration
 const brokerURL = 'mqtt://mqtt.koinsightug.com';
@@ -97,3 +104,6 @@ mqttClient.on('message', (topic, message) => {
 
 });
 
+server.listen(443, () => {
+  console.log('Server running on localhodt');
+});
