@@ -104,6 +104,6 @@ mqttClient.on('message', (topic, message) => {
 
 });
 
-server.listen(443, () => {
+server.listen(3000, () => {
   console.log('Server running on localhodt');
 });
