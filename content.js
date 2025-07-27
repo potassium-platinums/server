@@ -1,6 +1,6 @@
-// const express = require('express');
+const express = require('express');
 const http = require('http');
-// const app = express();
+const app = express();
 const axios = require('axios');
 const mqtt = require('mqtt');
 const server = http.createServer();
