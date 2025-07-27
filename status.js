@@ -3,7 +3,7 @@ const app = express();
 const axios = require('axios');
 const mqtt = require('mqtt');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // MQTT Configuration
 const brokerURL = 'mqtt://mqtt.koinsightug.com';
