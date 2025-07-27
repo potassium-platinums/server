@@ -33,7 +33,7 @@ mqttClient.on('message', (topic, message) => {
 
     const payload = {
       device_id: data.device_id,
-      status: "OFFLINE",
+      status: data.status,
     };
 
     axios.post('https://coffee.rndnakawa.com/api/get_status.php', payload, {
