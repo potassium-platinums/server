@@ -99,6 +99,31 @@ mqttClient.on('message', (topic, message) => {
   // }, timeUntilMidnight); // midnight update
 
 
+    const graph = {
+      // device_id: data.device_id,
+      count: data.count,
+      date: data.date,
+    };
+    axios.post('https://coffee.rndnakawa.com/api/barGraph.php', graph, {
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      // timeout: 5000
+    })
+    .then(response => {
+      console.log('Server response:', response.data);
+    })
+    .catch(error => {
+      if (error.response) {
+        console.error('Server responded with error:', error.response.status, error.response.data);
+      } else if (error.request) {
+        console.error('No response received:', error.message);
+      } else {
+        console.error('Error setting up request:', error.message);
+      }
+    });
+
+
 });
 
 app.listen(PORT, '0.0.0.0', () => {
