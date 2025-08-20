@@ -31,12 +31,13 @@ mqttClient.on('message', (topic, message) => {
     const data = JSON.parse(message.toString());    
     // console.log(data);
     
-    const graph = {
-      // device_id: data.device_id,
+
+    const bar = {
       count: data.count,
       date: data.date,
     };
-    axios.post('https://coffee.rndnakawa.com/api/barGraph.php', graph, {
+
+    axios.post('https://coffee.rndnakawa.com/api/bar.php', bar, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -54,7 +55,6 @@ mqttClient.on('message', (topic, message) => {
         console.error('Error setting up request:', error.message);
       }
     });
-
 
 });
 
